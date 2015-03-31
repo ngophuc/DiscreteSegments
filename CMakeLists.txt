@@ -1,0 +1,15 @@
+project(mySegmentDiscrete)
+
+#Required in DGtal
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+FIND_PACKAGE(DGtal REQUIRED)
+INCLUDE_DIRECTORIES(${DGTAL_INCLUDE_DIRS})
+
+add_definitions(-g)
+
+LINK_DIRECTORIES(${DGTAL_LIBRARY_DIRS})
+
+aux_source_directory(. SRC_LIST)
+add_executable(${PROJECT_NAME} ${SRC_LIST})
+
+TARGET_LINK_LIBRARIES(mySegmentDiscrete ${DGTAL_LIBRARIES})
